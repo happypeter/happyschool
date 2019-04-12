@@ -190,11 +190,11 @@ class BlogPostTemplate extends React.Component {
               style={{
                 boxShadow: 'none',
                 textDecoration: 'none',
-                color: 'var(--pink)',
+                color: '#8ce7f3',
               }}
               to={'/'}
             >
-              Overreacted
+              HappySchool
             </Link>
           </h3>
           <Bio />
