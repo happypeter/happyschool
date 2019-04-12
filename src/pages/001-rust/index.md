@@ -19,7 +19,12 @@ If you are using high-level languages runing on top of a interperter, say Ruby, 
 
 Rust is a compiled language, like C, it controls hardware resource directly, that why Rust code runs very fast. It is Good for writing system software. A lot of blockchain projects are using Rust, because app writen in Rust can be really performat, due to Rust's ablity to fully control the hardware.
 
+![](https://img.haoqicat.com/2019041203.jpg)
+
 Rust offers zero-cost abstraction. Rust has a lot of the sweet high level language feathure over some abstraction as we will show you later. Bust Rust is carefully designed, so that all these abstractions are at no cost. That is compiler will take care of them, and no runtime or garbage collector is required to have these abstractions.
+
+![](https://img.haoqicat.com/2019041204.jpg)
+
 
 Rust plays well with other languages. Rust interfaces to other languaages throught the C ABI at zero cost. you can use C lib esaily in Rust Code, or use Rust lib in C code.
 
@@ -156,6 +161,8 @@ To those who is using C/C++ and already have full control of the hardware, you s
 
 C/C++ offers great power, but also lots of risks. C can implement extraordinary performance but with lower abstraction and results in human mistakes easily. Like C, C++ can be really unfogiving, small mistakes, carsh is only a lucky, you might be trapped in a very unclear situation. If you are using C/C++, You need to worry about the hardware machine, and at the same time, you need to worry about your logic of your app.
 
+![](https://img.haoqicat.com/2019041205.jpg)
+
 However, Rust gives us stong Safty guanranteses. No seg fault, no run time crash, no null pointer, no dangling pointers, no out-of-bound accesses. and data Race free. Rust achieve this buy certain language features and good compiler support for this. If ever you do some thing wrong, the compiler will tell you about it.
 
 Hack without fear is Rust's slogan. You do not worry about your program once the compilation is complete.
@@ -168,7 +175,11 @@ A lot of people love Ruby, cause it is
 
 Rust does the same and is ergonomic.
 
+![](https://img.haoqicat.com/2019041206.jpg)
+
 Rust supports mutiple programming paradigms, like generic, imperative, structured. It is also inspired by Haskell,  you can do fp with rust. For example, you can explicitly define a variable to be utable with Rust. But by default, erveything is immutable. That sort of sweetness is not C/C++ can offer.
+
+![](https://img.haoqicat.com/2019041207.jpg)
 
 Rust has great tooling. Rust has a npm like system that you can get the ready-made code as packages. Cargo do the package managment for you. Rust also has great build system, no more hand made Makefiles.
 
