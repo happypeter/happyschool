@@ -40,13 +40,31 @@ class BlogIndexTemplate extends React.Component {
             const title = get(node, 'frontmatter.title') || node.fields.slug;
             const plink = get(node, 'frontmatter.plink');
             return (
-              <article key={node.fields.slug}>
+              <article
+                style={{
+                  marginBottom: rhythm(2),
+                }}
+                key={node.fields.slug}
+              >
                 <header>
-                  <img src={plink} alt={`poster`} />
+                  <Link
+                    style={{ boxShadow: 'none' }}
+                    to={node.fields.slug}
+                    rel="bookmark"
+                  >
+                    <img
+                      src={plink}
+                      alt={`poster`}
+                      style={{
+                        marginBottom: rhythm(1 / 4),
+                      }}
+                    />
+                  </Link>
                   <h3
                     style={{
                       fontFamily: 'Montserrat, sans-serif',
                       fontSize: rhythm(1),
+                      marginTop: 0,
                       marginBottom: rhythm(1 / 4),
                     }}
                   >
