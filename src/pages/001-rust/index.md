@@ -1,5 +1,5 @@
 ---
-title: Peter Hello
+title: Rust
 date: '2019-04-09'
 spoiler: spoiler is the short intro.
 plink: 'https://img.haoqicat.com/2019041201.jpg'
