@@ -2,6 +2,8 @@
 title: 为何使用 Rust 语言？
 date: '2019-04-11'
 video: 'https://www.bilibili.com/video/av48984844/'
+spoiler: Rust 是一个相对比较新的语言，2015年才正式发布，目的在于替代 C/C++ 以及其他更高层级的语言，我们首先要问的是，为何又要发明一门新的语言呢？这里来给出答案。
+plink: 'https://img.haoqicat.com/2019041201.jpg'
 ---
 
 Rust 是一种2015年发布的新的编程语言，可以作为 C/C++ 或者一些更上层语言的替代品。你可能首先要问的一个问题是
