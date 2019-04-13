@@ -1,6 +1,6 @@
 ---
 title: Why Rust?
-date: '2019–04–11'
+date: '2019-04-11'
 spoiler: Rust is a new language released in 2015, as an alternative for C/C++, or other higher-level languages. Why yet another programming language? Let's explore its strengths now.
 plink: 'https://img.haoqicat.com/2019041201.jpg'
 video: 'https://youtu.be/AMt-whOk6Mk'
