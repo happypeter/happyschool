@@ -1,9 +1,11 @@
 import React from 'react';
 import profilePic from '../assets/profile-pic.jpg';
 import { rhythm } from '../utils/typography';
+import { Link } from 'gatsby';
 
 class Bio extends React.Component {
   render() {
+    const { lang } = this.props;
     return (
       <div
         style={{
@@ -23,9 +25,20 @@ class Bio extends React.Component {
           }}
         />
         <p style={{ maxWidth: 310 }}>
-          Created with love by{' '}
-          <a href="https://mobile.twitter.com/happypeter">Peter Wang</a>.{' '}
-          I&nbsp;explain with words and code.
+          {lang === 'en' ? (
+            <span>
+              Created with love by{' '}
+              <a href="https://mobile.twitter.com/happypeter">Peter Wang</a>.{' '}
+              I&nbsp;explain with words and code. Language:
+              <Link to="/zh">中文</Link>
+            </span>
+          ) : (
+            <span>
+              <a href="https://mobile.twitter.com/happypeter">Peter</a>.{' '}
+              用爱打造。 网站语言:
+              <Link to="/">English</Link>
+            </span>
+          )}
         </p>
       </div>
     );
