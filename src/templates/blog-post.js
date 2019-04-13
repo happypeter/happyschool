@@ -133,8 +133,17 @@ class BlogPostTemplate extends React.Component {
                 />
               )}
             </header>
-            <a href={post.frontmatter.video}>Click To Play Video</a>
-
+            <div
+              style={{
+                marginBottom: 15,
+              }}
+            >
+              {lang === 'en' ? (
+                <a href={post.frontmatter.video}>Video at Youtube.com</a>
+              ) : (
+                <a href={post.frontmatter.video}>到 Bilibili 播放视频</a>
+              )}
+            </div>
             <div dangerouslySetInnerHTML={{ __html: html }} />
             <footer>
               <p>
