@@ -3,7 +3,7 @@ title: Why Rust?
 date: '2019–04–11'
 spoiler: Rust is a new language released in 2015, as an alternative for C/C++, or other higher-level languages. Why yet another programming language? Let's explore its strengths now.
 plink: 'https://img.haoqicat.com/2019041201.jpg'
-video: 'https://www.youtube.com/watch?v=W7oKII02wHw'
+video: 'https://youtu.be/AMt-whOk6Mk'
 ---
 
 Rust is a new programming language released on May 15th 2015, providing an alternative to C/C++, but also higher-level languages. So the obvious question is
@@ -23,8 +23,9 @@ Rust offers zero-cost abstraction. Rust has a lot of sweet high level language f
 
 ![](https://img.haoqicat.com/2019041204.jpg)
 
-Rust plays well with other languages. Rust interfaces to other languages through the C ABI at zero cost. you can use C library in Rust Code, or use Rust lib in C code.
-Now let's understand the Rust way buy a demo. Ruby language has a method named `blank`, which is used to check if a string is blank. The ruby implementation is like this.
+Rust plays well with other languages. Rust interfaces to other languages through the C ABI at zero cost. you can use C library in Rust Code, or use Rust library in C code.
+
+Now let's understand the Rust way with a demo. Ruby language has a method named `blank`, which is used to check if a string is blank. The ruby implementation is like this.
 
 ```ruby
 class ::String
@@ -183,6 +184,8 @@ Great community. Rust is from Mozilla, but more than 4/5 of contributions come f
 ## Conclusion
 
 Rust preserves the conveniences of high-level languages in low-level land. It's as fast as C/C++, and as safe and easy to use as higher-level languages like Python/Ruby or Haskell. That's why lots of peope move to rust land from the higher or lower world.
+
+That's all for this episode, if want some discussion, I am happypeter1983 on twitter.
 
 Ref:
 - https://medium.com/@Aimeedeer/why-rust-c877fba0ca94
