@@ -1,8 +1,8 @@
 ---
 title: 你真的了解区块链状态爆炸吗？
 date: '2019-04-18'
-spoiler: 制作中
-video: 'https://www.bilibili.com/video/av48984844/'
+spoiler: 什么是区块链的状态爆炸，为什么这是一个值得关注的问题？是不是存在区块链上的所有数据都叫”状态“？比特币和其他区块链目前的情况如何，为什么说不解决这个问题我们就很难向前发展了？带着这些问题，来跟 Peter 一起开始这一期的 Happy Crypto School.
+video: 'https://www.bilibili.com/video/av49675166/'
 plink: 'https://img.haoqicat.com/2019041801.jpg'
 ---
 

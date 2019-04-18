@@ -3,7 +3,7 @@ title: Blockchain State Explosion
 date: '2019-04-18'
 spoiler: What is Blockchain State Explosion, and why is that a problem? Is all data on a blockchain state? What’s the current situation of Bitcoin and other chains, why we need to solve this before we can move on? 
 plink: 'https://img.haoqicat.com/2019041801.jpg'
-video: 'https://www.youtube.com/watch?v=W7oKII02wHw'
+video: 'https://www.youtube.com/watch?v=qdoq5i8Ppus'
 ---
 
 [](/yes/)
@@ -42,16 +42,17 @@ Bitcoin currently does not have this problem, cause the Bitcoin state size only 
 
 
 
-But smart contract platforms like Ethereum are more vulnerable to the explosion. People need to store all kinds of data on the chain. Once the blockchain get mass adoption the state growth rate will exponentially outpaced the hardware capability growth. Nervos try to solve this with its layered architecture, the details are out of the scope of this episode.
+But smart contract platforms like Ethereum are more vulnerable to the explosion. People need to store all kinds of data on the chain. Once the blockchain get mass adoption the state growth rate will exponentially outpaced the hardware capability growth. Nervos tries to solve this with its layered architecture, the details are out of the scope of this episode.
 
 So Blockchain State Explosion is becoming a problem.
 
 ## Why Is It a Problem?
+
 So why is the explosion a problem?
 
 ![](https://img.haoqicat.com/2019041805.jpg)
 
-Firstly. Once the blockchain grows too big in size, nodes on the network will have to spend more money for storage hardware, that harms decentralized cause normal people will not be able to afford running a node.
+Firstly. Once the blockchain grows too big in size, nodes on the network will have to spend more money for storage hardware, that harms decentralization cause normal people will not be able to afford running a node.
 
 ![](https://img.haoqicat.com/2019041806.jpg)
 
