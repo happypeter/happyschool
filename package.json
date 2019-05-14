@@ -55,7 +55,7 @@
     "start": "npm run develop",
     "build": "rm -rf public && rm -rf .cache && gatsby build",
     "now-build": "gatsby build",
-    "deploy": "yarn build && cp now.json public/ && cd public && now alias $(now) overreacted.io",
+    "deploy": "yarn build && cd ../happyschool.github.io && mv CNAME .. &&rm -rf * && mv ../CNAME . && mv ../happyschool/public/* . && git add -A && git commit -m'i'&& git push",
     "dry": "yarn build && cp now.json public/ && cd public && now"
   },
   "husky": {
