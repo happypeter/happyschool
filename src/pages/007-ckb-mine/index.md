@@ -20,7 +20,7 @@ I will show you how to download the client software and install it soon enough.
 
 And what is CKB testnet? CKB is a blockchain, a peer to peer network, which means there is no server, so the testnet is nothing but all the CKB nodes together, the nodes talk to each other, and reach consensus on things to make the whole chain trust worthy. Testnet is different from mainnet in that it is here for testing things.
 
-A SDK is a piece of code that help you interact with CKB network. In this episode, Javascript version of the SDK will be used, So in order to follow along, You might need to have basic understanding of how javascript and nodejs works. But there are SDKs for other languages too, check the official doc site for more on that. 
+A SDK is a piece of code that help you interact with CKB network. In this episode, Javascript version of the SDK will be used, So in order to follow along, You might need to have basic understanding of how javascript and nodejs works. But there are SDKs for other languages too, check the official doc site https://docs.nervos.org for more on that. 
 
 The process goes like this. I will first show you how to setup a node, then using the SDK to generate a wallet of your own, now change the node config to use your own wallet, so that the mining reward will be saved to the wallet. Then I will start to mine the block, and mining means to use my laptop's computing power to find a hash that match the network's requirement, once I find the hash, that means I find the seal for the block, I can publish the block to the network and get certain amount of CKB coin as the reward. And finally, I will show you how to use CKB blockchain explorer to check your rewards.
 
@@ -43,7 +43,7 @@ unzip ckb_v0.12.0_darwin_amd64.zip
 cd ckb_v0.12.0_darwin_amd64
 ```
 
-Run this command to make ckb a system command. It's a typical unix trick to create a symlink, but it's OK for you not to understand what a symlink is for now.
+Run this command to make `ckb` a system command. It's a typical unix trick to create a symlink, but it's OK for you not to understand what a symlink is for now.
 
 ```
 sudo ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
@@ -74,11 +74,11 @@ In the console output we see that my node is downloading the whole blockchain fr
 
 Once the downloading finished, we have our node up and running, awesome~~~
 
-## Config to Use your own wallet
+## Use Your Own Wallet
 
 Now I need to generate our own wallet and replace the default configuration for the local node, so that the mining reward goes to my own wallet.
 
-Firstly, create a simple node project. Be aware that this project is not part of the node, and it's only used to generate a wallet for us. 
+Firstly, create a simple Nodejs project. Be aware that this project is not part of the node, and it's only used to generate a wallet for us. 
 
 ```
 $ node --version
@@ -167,7 +167,7 @@ The first two lines of output is the wallet, which is nothing more than a privat
   args = ["0xc5bf2929f835eb68c789e440ab18c65498fc6ed5"]
 ```
 
-Now Ctrl-C to stop the ckb run process, restart again to load the modified config.
+Now Ctrl-C to stop the ckb process, restart again to load the modified config.
 
 To start mining, we need to open a new terminal and run
 
