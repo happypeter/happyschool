@@ -2,8 +2,8 @@
 title: Nervos CKB 挖矿教程
 date: '2019-05-23'
 spoiler: Nervos CKB 是 Nervos 的第一层，是一条无需许可的公链，CKB 的测试网刚刚5月18号上线了。所以本期的快乐加密学院，咱们一起看看如何运行一个 CKB 的节点，然后进行挖矿获得奖励。操作会基于 MacOS 和官方提供的 Javascript 的 SDK 来进行，然后通过 CKB 的区块链浏览器来查看最终结果。
-video: 'https://www.bilibili.com/video/av52521260/'
-plink: 'https://img.haoqicat.com/201901501.jpg'
+video: 'https://www.bilibili.com/video/av53403812/'
+plink: 'https://img.haoqicat.com/20190152401.jpg'
 ---
 
 Nervos CKB 是 Nervos 的第一层，是一条无需许可的公链，CKB 的测试网刚刚5月18号上线了。所以本期的快乐加密学院，咱们一起看看如何运行一个 CKB 的节点，然后进行挖矿获得奖励。操作会基于 MacOS 和官方提供的 Javascript 的 SDK 来进行，然后通过 CKB 的区块链浏览器来查看最终结果。
@@ -20,9 +20,13 @@ Nervos CKB 是 Nervos 的第一层，是一条无需许可的公链，CKB 的测
 
 另外，什么是 CKB 的测试网呢？CKB 是一个区块链项目，所以基本结构是点对点的，这就意味着整个网络上没有服务器，所有的节点就组成了整个网络，各个节点间通过平等通信来达成对数据的共识，这样保证了整条区块链是可以被信赖的。测试网是区别于主网来说的，主要是用于测试目的。
 
+![](https://img.haoqicat.com/2019052402.jpg)
+
 SDK 是一些方便我们跟 CKB 网络进行交互的代码。本期咱们会使用 Javascript 版本的 SDK 。所以最好你对 Nodejs 和 Javascript 要有基本的了解。如果你平常喜欢用其他语言开发的话，官方的文档网站上 https://docs.nervos.org 有其他语言的 SDK 的介绍。
 
 整个的过程是这样的。首先要搭建一个节点，然后使用 SDK 来生成自己的钱包，修改节点配置使用自己的钱包，这样挖矿奖励才能到自己手里。然后就开始挖矿过程，也就是用我的笔记本的算力去运算一个满足网络要求的哈希值，运算成功之后就相当于找到了当前 block 的 Seal 也就是封印。有了封印就成功制作了这个区块，也就可以把这个区块广播到全网获得挖矿奖励了。最后，可以到测试网的区块浏览器上去查看一下最终的结果，例如看看是不是地址上真正有了币。
+
+![](https://img.haoqicat.com/2019052403.jpg)
 
 最后要提醒的是，测试网每两周就会重置一次，到时候所有的币也就都清空了。
 
@@ -92,7 +96,7 @@ v10.10.0
 ```
 mkdir gen-wallet
 cd gen-wallet
-node init -y
+npm init -y
 ```
 
 创建文件夹来存放这个项目，运行 `node init` 来创建 package.json 文件。
@@ -179,7 +183,7 @@ ckb miner
 
 这就意味着找到 Seal 了，也就是找到了一个区块的封印了，这就意味着成功挖出了一个区块。
 
-可以到区块链浏览器 https://explorer.nervos.org 中，搜索一下我的钱包公钥，这样就可以看到是否收到奖励了。
+可以到区块链浏览器 https://explorer.nervos.org 中，搜索一下我的钱包地址，这样就可以看到是否收到奖励了。
 
 ## 结论
 

@@ -2,11 +2,11 @@
 title: Nervos CKB Mining Tutorial
 date: '2019-05-23'
 spoiler: Nervos CKB , that is the layer1 blockchain for Nervos network, testnet launched on May 18th. In this episode I will take you though the process of running a CKB node and mining CKB blocks to get reward. We will be using MacOS as the operating system, CKB Javascript SDK to generate wallet, and the blockchain's explorer to view results.
-plink: 'https://img.haoqicat.com/2019051501.jpg'
-video: 'https://youtu.be/ZdadUtM5-qU'
+plink: 'https://img.haoqicat.com/2019052401.jpg'
+video: 'https://youtu.be/ZumXJa74mek'
 ---
 
-Nervos CKB , that is the layer1 blockchain for Nervos network, testnet launched on May 18th. In this episode I will take you though the process of running a CKB node and mining CKB blocks to get reward. We will be using MacOS as the operating system, CKB Javascript SDK to generate wallet, and the blockchain's explorer to view results.
+Nervos CKB , that is the layer1 blockchain for Nervos network, testnet launched on May 18th. In this episode I will take you through the process of running a CKB node and mining CKB blocks to get reward. We will be using MacOS as the operating system, CKB Javascript SDK to generate wallet, and the blockchain's explorer to view results.
 
 ## How Things Fit Together
 
@@ -18,13 +18,18 @@ In order to mine CKB, you need to run your own node first, but what is a node? T
 
 I will show you how to download the client software and install it soon enough.
 
-And what is CKB testnet? CKB is a blockchain, a peer to peer network, which means there is no server, so the testnet is nothing but all the CKB nodes together, the nodes talk to each other, and reach consensus on things to make the whole chain trust worthy. Testnet is different from mainnet in that it is here for testing things.
+And what is CKB testnet? CKB is a blockchain, a peer to peer network, which means there is no server, so the testnet is nothing but all the CKB nodes together, the nodes talk to each other, and reach consensus on data to make the whole chain trust worthy. Testnet is different from mainnet in that it is here for testing things.
 
-A SDK is a piece of code that help you interact with CKB network. In this episode, Javascript version of the SDK will be used, So in order to follow along, You might need to have basic understanding of how javascript and nodejs works. But there are SDKs for other languages too, check the official doc site https://docs.nervos.org for more on that. 
+![](https://img.haoqicat.com/2019052402.jpg)
 
-The process goes like this. I will first show you how to setup a node, then using the SDK to generate a wallet of your own, now change the node config to use your own wallet, so that the mining reward will be saved to the wallet. Then I will start to mine the block, and mining means to use my laptop's computing power to find a hash that match the network's requirement, once I find the hash, that means I find the seal for the block, I can publish the block to the network and get certain amount of CKB coin as the reward. And finally, I will show you how to use CKB blockchain explorer to check your rewards.
+A SDK is a piece of code that help you interact with CKB network. In this episode, Javascript version of the SDK will be used, so in order to follow along, You might need to have basic understanding of how Javascript and Nodejs works. But there are SDKs for other languages too, check the official doc site https://docs.nervos.org for more on that. 
 
-Finally be warned. The testnet will be reset and updated every two weeks, so any coins you have on the testnet will be cleared upon the reset.
+The process goes like this. I will first show you how to setup a node, then using the SDK to generate a wallet of your own, now change the node config to use your own wallet, so that the mining reward will be saved to the wallet. Then I will start to mine the block, and mining means to use my laptop's computing power to find a hash that match the network's requirement, once I find the hash, that means I find the seal for the block, I can publish the block to the network and get certain amount of CKB coins as the reward. And finally, I will show you how to use CKB blockchain explorer to check your rewards.
+
+![](https://img.haoqicat.com/2019052403.jpg)
+
+
+Finally be warned. The testnet will be reset every two weeks, so any coins you have on the testnet will be cleared upon the reset.
 
 ## Run a node
 
@@ -76,21 +81,21 @@ Once the downloading finished, we have our node up and running, awesome~~~
 
 ## Use Your Own Wallet
 
-Now I need to generate our own wallet and replace the default configuration for the local node, so that the mining reward goes to my own wallet.
+Now I need to generate my own wallet and replace the default configuration for the local node, so that the mining reward goes to my own wallet.
 
-Firstly, create a simple Nodejs project. Be aware that this project is not part of the node, and it's only used to generate a wallet for us. 
+Firstly, create a simple Nodejs project. Be aware that this project is not part of the CKB node, and it's only used to generate a wallet for us. 
 
 ```
 $ node --version
 v10.10.0
 ```
 
-The code will use some new JS features like async/await, so make sure your nodejs version is not too old, mine is 10.10, please use a same or greater version.
+The code will use some new JS features like async/await, so make sure your Nodejs version is not too old, mine is 10.10, please use a same or greater version.
 
 ```
 mkdir gen-wallet
 cd gen-wallet
-node init -y
+npm init -y
 ```
 
 Create a folder to save the node project, run `node init` to generate a package.json file.
@@ -183,7 +188,7 @@ Wait for a few minutes, until you see something like this in the console output
 
 This means I've found a seal for a block, and mined a block successfully.
 
-So we can go to https://explorer.nervos.org , search our wallet by the public key and check to see the reward.
+So we can go to https://explorer.nervos.org , search our wallet by its address and check to see the reward.
 
 ## Conclusion
 
