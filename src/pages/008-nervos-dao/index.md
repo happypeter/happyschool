@@ -1,16 +1,16 @@
 ---
-title: A Gentle Intro To The NervosDao
+title: A Gentle Intro To The NervosDAO
 date: '2019-05-30'
-spoiler: People new to the Nervos CKB blockchain may wonder why there is something called NervosDao. In this episode we will be focusing on why the NervosDao is created and how it works as an indispensable part of CKB.
+spoiler: People new to the Nervos CKB blockchain may wonder why there is something called NervosDAO. In this episode we will be focusing on why the NervosDAO is created and how it works as an indispensable part of CKB.
 plink: 'https://img.haoqicat.com/2019052401.jpg'
 video: 'https://youtu.be/ZumXJa74mek'
 ---
 
-People new to the Nervos CKB blockchain may wonder why there is something called NervosDao. In this episode we will be focusing on why is the NervosDao created and how it works as an indispensable part of CKB.
+People new to the Nervos CKB blockchain may wonder why there is something called NervosDAO. In this episode we will be focusing on why is the NervosDAO created and how it works as an indispensable part of CKB.
 
 ## State Rent
 
-To understand what is the NervosDao, we will need to understand why and how Nervos CKB collects state rent.
+To understand what is the NervosDAO, we will need to understand why and how Nervos CKB collects state rent.
 
 Bitcoin brought mankind decentralized immutable data, which inspired people. Many people wanted to use Bitcoin as a smart contract platform, but later found out it was hard to do so because Bitcoin is not designed as a data preservation focused blockchain. On Bitcoin blockchain, neither the size nor the growth rate of the global state can be bounded in a controlled way. When I save data on Bitcoin blockchain, I pay once with transaction fee, but miners and full nodes have to bear the cost of storage over time. In other word, Bitcoin holds the "pay once, occupy forever" state storage model. There is no way to charge users for their use of the blockchain based on both space and time, and this will easily result in the abuse of the storage space. That's where the Nervos' state rent idea comes in.
 
@@ -18,19 +18,19 @@ However, it's challenging to collect state rent to the state users,  which are u
 
 That's how it works.
 
-## Why NervosDao?
+## Why NervosDAO?
 
-Now it's time to introduce the NervosDao, what is it and what benefits it brings.
+Now it's time to introduce the NervosDAO, what is it and what benefits it brings.
 
-The NervosDao is a smart contract built on CKB blockchain, and it works like a bank, CKB token holders can deposit their token in it, and get interest in return.
+The NervosDAO is a smart contract built on CKB blockchain, and it works like a bank, CKB token holders can deposit their token in it, and get interest in return.
 
 But for long term CKB token holders, as long as they lock their tokens in the NervosDAO, that means never occupy the space on blockchain, the inflationary effect of secondary issuance is only nominal. For token holders it's as if the secondary issuance doesn't exist, and they're holding hard-capped tokens like Bitcoin.
 
-To put it shortly, the NervosDao is there to make CKB token a good Store of Value medium.
+To put it shortly, the NervosDAO is there to make CKB token a good Store of Value medium.
 
-## How NervosDao Works?
+## How NervosDAO Works?
 
-You can stop here if you don't want to know the details of the NervosDao. But if you want to more precise, let's go on with the details of how token issuance and the NervosDao works.
+You can stop here if you don't want to know the details of the NervosDAO. But if you want to more precise, let's go on with the details of how token issuance and the NervosDAO works.
 
 The number of base issuance halves approximately every 4 years until all the base issuance tokens are mined out, that's exactly like Bitcoin. The secondary issuance is designed to collect state rent, and has issuance amount that is constant over time. After base issuance stops, there will only be secondary issuance.
 
