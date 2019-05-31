@@ -1,190 +1,53 @@
 ---
-title: Nervos CKB 挖矿教程
-date: '2019-05-23'
-spoiler: Nervos CKB 是 Nervos 的第一层，是一条无需许可的公链，CKB 的测试网刚刚5月18号上线了。所以本期的快乐加密学院，咱们一起看看如何运行一个 CKB 的节点，然后进行挖矿获得奖励。操作会基于 MacOS 和官方提供的 Javascript 的 SDK 来进行，然后通过 CKB 的区块链浏览器来查看最终结果。
-video: 'https://www.bilibili.com/video/av53403812/'
-plink: 'https://img.haoqicat.com/20190152401.jpg'
+title: NervosDAO 的简单介绍
+date: '2019-05-30'
+spoiler: 对 Nervos CKB 不太了解的人可能会奇怪，为啥要有个 NervosDAO 呢？这期咱们就来看看当初为啥要发明 NervosDAO ，而它又是怎么作为 CKB 不可或缺的一部分来进行工作的呢？
+video: 'https://www.bilibili.com/video/av54178493'
+plink: 'https://img.haoqicat.com/2019053101.jpg'
 ---
 
-Nervos CKB 是 Nervos 的第一层，是一条无需许可的公链，CKB 的测试网刚刚5月18号上线了。所以本期的快乐加密学院，咱们一起看看如何运行一个 CKB 的节点，然后进行挖矿获得奖励。操作会基于 MacOS 和官方提供的 Javascript 的 SDK 来进行，然后通过 CKB 的区块链浏览器来查看最终结果。
+对 Nervos CKB 不太了解的人可能会奇怪，为啥要有个 NervosDAO 呢？这期咱们就来看看当初为啥要发明 NervosDAO ，而它又是怎么作为 CKB 不可或缺的一部分来进行工作的呢？
 
-## 基本原理介绍
+## 状态租金
 
-动手之前，先对各个组件和概念进行一下介绍。
+在理解 NervosDAO 之前，有必要先了解 CKB 是如何收取状态租金的。
 
-挖 CKB 之前，我得先有一个自己的 CKB 节点，那么什么叫一个节点，也就是 node 呢？答案其实很简单
+![](https://img.haoqicat.com/2019053102.jpg)
 
-> 节点就是一个安装了 CKB 客户端的计算机
+比特币给人类带来了去中心化的不可篡改的数据，这一点启发了大家。很多人都试图把比特币作为一个智能合约平台来使用，但是后来才发现比特币真的不太适合扮演这个角色。因为比特币不是设计来完成通用数据的保存工作的。比特币区块链上，不管是状态的增长率还是最终的大小都不能被很好的进行控制。如果我要往比特币上存储数据，那我只需要发交易就行了，只需要一次性的花一笔手续费，而矿工则不得不永久性的替我保存数据，存储的成本会成为所有节点的永久性负担。换句话说，比特币的模式就是“一次付费，永久占用”。对于区块链的使用是没有办法根据空间和时间维度来合理进行收费的，这就很容易导致存储空间的浪费。而 Nervos 的状态租金思想就是来解决这个问题的。
 
-稍后我会给大家演示怎么下载客户端并进行安装的。
+但是，要跟用户收取状态租金其实非常困难，因为智能合约的用户很多时候都是一个去中心化的社区，那么问题来了，怎么去协调大家去一起交费呢？所以 Nervos 采用了一个非常不一样的方案，那就是通过次级发行。关于次级发行的细节我们一会儿再详细介绍，但是它的基本的思路是很简单的。比特币的发行总量是有上限的，但是 Nervos CKB 的币，名字也叫 CKB ，是会持续通胀的。如果你是智能合约开发者，那你就需要持有一定的 CKB 币，才能占用状态空间来进行开发，那么租金会以通胀税的形式来收取。换句话说，交租金的方式就是去承受自己手里的币的通胀。
 
-另外，什么是 CKB 的测试网呢？CKB 是一个区块链项目，所以基本结构是点对点的，这就意味着整个网络上没有服务器，所有的节点就组成了整个网络，各个节点间通过平等通信来达成对数据的共识，这样保证了整条区块链是可以被信赖的。测试网是区别于主网来说的，主要是用于测试目的。
+这就是收租金的基本过程了。
 
-![](https://img.haoqicat.com/2019052402.jpg)
+## 为何要有 NervosDAO ?
 
-SDK 是一些方便我们跟 CKB 网络进行交互的代码。本期咱们会使用 Javascript 版本的 SDK 。所以最好你对 Nodejs 和 Javascript 要有基本的了解。如果你平常喜欢用其他语言开发的话，官方的文档网站上 https://docs.nervos.org 有其他语言的 SDK 的介绍。
+下面就可以来介绍 NervosDAO 了，来一起看看什么是 NervosDAO ，它能带来哪些好处。
 
-整个的过程是这样的。首先要搭建一个节点，然后使用 SDK 来生成自己的钱包，修改节点配置使用自己的钱包，这样挖矿奖励才能到自己手里。然后就开始挖矿过程，也就是用我的笔记本的算力去运算一个满足网络要求的哈希值，运算成功之后就相当于找到了当前 block 的 Seal 也就是封印。有了封印就成功制作了这个区块，也就可以把这个区块广播到全网获得挖矿奖励了。最后，可以到测试网的区块浏览器上去查看一下最终的结果，例如看看是不是地址上真正有了币。
+NervosDAO 是一个 CKB 区块链上的智能合约，它的功能就像一个银行，持有 CKB 的人可以把自己的币存进去，然后就可以获得利息。
 
-![](https://img.haoqicat.com/2019052403.jpg)
+作为一个 CKB 币的长期持有人，只要他把币存入了 NervosDAO ，也同时意味着他不会去占用对应的区块链空间了，那么次级发行带来的通胀效果对他来说就只是名义上的了。他可以认为次级发行根本不存在，自己持有的就是有硬顶的发行量的币，就跟持有比特币一样。
 
-最后要提醒的是，测试网每两周就会重置一次，到时候所有的币也就都清空了。
+简单来说，NervosDAO 的目的就是保证 CKB 币是一种良好的价值存储形式。
 
-## 运行一个节点
+## 工作过程
 
-下面来搭建一下节点。
+如果你对 NervosDAO 工作过程的细节不感兴趣，那么就可以不听下面的内容了。因为下面咱们要聊是代币发行和 NervosDAO 运行过程的细节了。
 
-首先，从官方的 Github 仓库，下载二进制包
+基础发行是跟比特币一样每四年减半的，所以最终是会结束的。次级发行则会一直都有，它的目的就是用来收取状态租金。
 
-```
-wget https://github.com/nervosnetwork/ckb/releases/download/v0.12.0/ckb_v0.12.0_darwin_amd64.zip
-```
+![](https://img.haoqicat.com/2019053103.jpg)
 
-解压缩
+CKB 采用了一个两步走的策略来完成收取状态租金的任务。首先，基础发行之上，CKB 通过增加次级发行来对所有的持币者都收了通胀税。对于真的占用了空间的持币人，这部分税就作为状态租金交给矿工了。但是注意，我们也收了其他人的税哦，这部分怎么退呢？这些人可以把币存在 NervosDAO 里面，次级发行中会有一部分币流入 NervosDAO ，合理的补贴给这些人，来弥补币的稀释。
 
-```
-unzip ckb_v0.12.0_darwin_amd64.zip
-cd ckb_v0.12.0_darwin_amd64
-```
+![](https://img.haoqicat.com/2019053104.jpg)
 
-接下来把 ckb 变成一个系统命令。我们这里做的就是一个常见的 Unix 操作，创建了一个符号链接，不过如果你不理解什么是符号链接也没关系的，不影响后续的操作。
+举例来说，假如次级发行的时候，已有的 CKB 币中有60%是用来存储状态了，35%存到了 NervosDAO 中，另外5%保持流通。这样，60%的次级发行会交给矿工，35%会給 NervosDAO 然后按比例分给存币的人，剩下的次级发行，也就是最后这5%会被销毁。
 
-```
-sudo ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
-```
+更多这方面的细节，可以去看 CKB 经济学白皮书  https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md 。
 
-到底这个命令是不是生效了呢？
+## 总结
 
-```
-ckb --version
-```
+好，这期主体内容就是这些了。我们聊了什么是 NervosDAO 以及它的工作原理。Nervos CKB 可以通过通胀税的形式来收取状态租金，同时又能保证 CKB 跟有硬顶的币一样具有好的保值特性，这个的精巧设计中的关键组件就是 NervosDAO 。
 
-可以看到输出的版本号即可。
-
-这样 CKB 客户端安装就成功了。接下来可以运行命令来生成测试网的配置文件。
-
-```
-ckb init -C ckb-testnet --spec testnet
-```
-
-创建一个文件夹叫 `ckb-testnet` ，里面保存了配置文件。
-
-进入这个文件夹，启动 CKB 。
-
-```
-cd ckb-testnet
-ckb run
-```
-
-终端输出中可以看到正在从其他节点下载整条区块链，过程的确是需要一些时间的。区块链浏览器的首页 https://explorer.nervos.org/ 上可以看到最新的块高度，这样我们可以大概感觉出下载整条链需要多久。
-
-下载完毕之后，我们的节点就运行起来了，可以庆祝一下了。
-
-## 使用自己的钱包
-
-现在需要来生成自己的钱包，替换掉节点配置中默认的钱包，这样挖矿奖励才能到我们自己手里。
-
-首先要创建一个 Nodejs 的项目。注意，这个项目不是节点的一部分，我们只是用它来生成一下钱包。
-
-```
-$ node --version
-v10.10.0
-```
-
-代码里面会用到 async/await 这样的比较新的 Javascript 的功能，所以要确保 Nodejs 版本不能太老。我本地是10.10.0，你那边保证不低于这个版本就好了。
-
-```
-mkdir gen-wallet
-cd gen-wallet
-npm init -y
-```
-
-创建文件夹来存放这个项目，运行 `node init` 来创建 package.json 文件。
-
-```
-yarn add @nervosnetwork/ckb-sdk-core
-```
-
-SDK 可以作为一个 npm 包来安装。
-
-下面创建一下 index.js 文件，里面的代码是从 SDK 仓库 https://github.com/nervosnetwork/ckb-sdk-js 的 demo 里面摘出来的。
-
-```js
-const EC = require('elliptic').ec
-const Core = require('@nervosnetwork/ckb-sdk-core').default
-const Address = require('@nervosnetwork/ckb-sdk-address').default
-
-const ec = new EC('secp256k1')
-
-const privateKey = ec.genKeyPair()
-
-const address = new Address(privateKey, { prefix: 'ckt' })
-
-console.log('privateKey: ', '0x' + address.getPrivateKey())
-console.log('address: ', address.value)
-
-
-const nodeUrl = process.env.NODE_URL || 'http://localhost:8114'
-
-const core = new Core(nodeUrl)
-const bootstrap = async () => {
-  const systemCellInfo = await core.loadSystemCell()
-
-
-  const SYSTEM_ENCRYPTION_CODE_HASH = core.rpc.paramsFormatter.toHash(
-    systemCellInfo.codeHash
-  )
-
-  const myAddressObj = core.generateAddress(privateKey)
-
-  const blake160edPublicKey = core.utils.blake160(myAddressObj.publicKey, 'hex')
-
-
-  const script = {
-    codeHash: SYSTEM_ENCRYPTION_CODE_HASH,
-    args: ['0x' + blake160edPublicKey]
-  }
-
-  console.log('\nscript: ', script)
-}
-
-bootstrap()
-```
-
-要生成新的钱包，运行
-
-```
-$ node index.js
-
-privateKey:  0x25395da41ffb99c007ef1e0e2621381577faeeeec486d0943894bba0edacbaeb
-address:  ckt1q9gry5zgckljj20cxh4k33ufu3q2kxxx2jv0cmk4ykgkhc
-
-
-script:  { codeHash:
-   '0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08',
-  args: [ '0xc5bf2929f835eb68c789e440ab18c65498fc6ed5' ] }
-```
-
-输出中的前两项就是钱包了，钱包就是一个公钥加一个私钥。下面的 script 这一项是钱包的另外一种形式，当前其中是不包含私钥的。可以用这些内容区替换 ckb.toml 中的对应内容。
-
-Ctrl-C 停下 ckb 进程，然后重启一下，就可以加载新的配置了。
-
-要进行挖矿，还要新开一个终端窗口，运行
-
-```
-ckb miner
-```
-
-这样就开始了挖矿。注意这里的输出，一般几分钟之后，就可以看到弹出了这样的信息
-
-```
-2019-05-22 22:04:56.210 +08:00 main INFO miner  found seal: Seal { nonce: 12598543649063525489, proof: 0xf9030000ab350000ad3a0000ab4000007f4600001e4b00005d5200003e5b0000625d00003d6200001e6f000069780000 }
-```
-
-这就意味着找到 Seal 了，也就是找到了一个区块的封印了，这就意味着成功挖出了一个区块。
-
-可以到区块链浏览器 https://explorer.nervos.org 中，搜索一下我的钱包地址，这样就可以看到是否收到奖励了。
-
-## 结论
-
-好，这就是本期的主体内容。咱们一起搭建了一个 CKB 的节点，然后挖出了区块。希望你能喜欢这个视频，我是 Peter ，咱们下次再见。
+这期就到这里，我是 Peter ，下期再见。
