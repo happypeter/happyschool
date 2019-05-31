@@ -6,7 +6,7 @@ plink: 'https://img.haoqicat.com/2019053101.jpg'
 video: 'https://www.youtube.com/watch?v=m458LWfXbQI&feature=youtu.be'
 ---
 
-People new to the Nervos CKB blockchain may wonder why there is something called NervosDAO. In this episode we will be focusing on why is the NervosDAO created and how it works as an indispensable part of CKB.
+People new to the Nervos CKB blockchain may wonder why there is something called NervosDAO. In this episode we will be focusing on why the NervosDAO is created and how it works as an indispensable part of CKB.
 
 ## State Rent
 
