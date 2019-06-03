@@ -10,7 +10,7 @@ People new to the Nervos CKB blockchain may wonder why there is something called
 
 ## State Rent
 
-To understand what is the NervosDAO, we will need to understand why and how Nervos CKB collects state rent.
+To understand what the NervosDAO is, we will need to understand why and how Nervos CKB collects state rent.
 
 Bitcoin brought mankind decentralized immutable data, which inspired people. Many people wanted to use Bitcoin as a smart contract platform, but later found out it was hard to do so because Bitcoin is not designed as a data preservation focused blockchain. On Bitcoin blockchain, neither the size nor the growth rate of the global state can be bounded in a controlled way. When I save data on Bitcoin blockchain, I pay once with transaction fee, but miners and full nodes have to bear the cost of storage over time. In other word, Bitcoin holds the "pay once, occupy forever" state storage model. There is no way to charge users for their use of the blockchain based on both space and time, and this will easily result in the abuse of the storage space. That's where the Nervos' state rent idea comes in.
 
