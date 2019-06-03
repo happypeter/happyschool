@@ -3,7 +3,7 @@ title: Nervos CKB 挖矿教程
 date: '2019-05-23'
 spoiler: Nervos CKB 是 Nervos 的第一层，是一条无需许可的公链，CKB 的测试网刚刚5月18号上线了。所以本期的快乐加密学院，咱们一起看看如何运行一个 CKB 的节点，然后进行挖矿获得奖励。操作会基于 MacOS 和官方提供的 Javascript 的 SDK 来进行，然后通过 CKB 的区块链浏览器来查看最终结果。
 video: 'https://www.bilibili.com/video/av53403812/'
-plink: 'https://img.haoqicat.com/20190152401.jpg'
+plink: 'https://img.haoqicat.com/2019052401.jpg'
 ---
 
 Nervos CKB 是 Nervos 的第一层，是一条无需许可的公链，CKB 的测试网刚刚5月18号上线了。所以本期的快乐加密学院，咱们一起看看如何运行一个 CKB 的节点，然后进行挖矿获得奖励。操作会基于 MacOS 和官方提供的 Javascript 的 SDK 来进行，然后通过 CKB 的区块链浏览器来查看最终结果。
