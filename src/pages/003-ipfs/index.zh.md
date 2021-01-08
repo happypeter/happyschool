@@ -3,13 +3,13 @@ title: 理解 IPFS 星际文件系统
 date: '2019-04-25'
 spoiler: 一个更加中立自由，更加去中心化的互联网是加密经济的基础设施保证。而去中心化存储又是一个更加自由的互联网的基础。所以就不奇怪为何 Filecoin + IFPS 这套组合在2017年获得了如此高的共识度。这期来聊聊 Filecoin 和 IPFS 。
 video: 'https://www.bilibili.com/video/av50444622/'
-plink: 'https://img.haoqicat.com/2019042507.jpg'
+plink: 'https://happypeter.github.io/images/2019042507.jpg'
 ---
 
 
 一个更加中立自由，更加去中心化的互联网是加密经济的基础设施保证。而去中心化存储又是一个更加自由的互联网的基础。所以就不奇怪为何 Filecoin + IFPS 这套组合在2017年获得了如此高的共识度，获得了来自 Y Combinator, Naval Ravikant, Andreessen Horowitz, Union Square Ventures Sequoia and Winklevoss Capital ，这些互联网和比特币圈子的顶级投资机构的2.5亿美金的融资。这期来聊聊 Filecoin 和 IPFS 。
 
-![](https://img.haoqicat.com/2019042501.jpg)
+![](https://happypeter.github.io/images/2019042501.jpg)
 
 
 ## 从按位置查找到按内容查找
@@ -19,7 +19,7 @@ The InterPlanetary File System (IPFS) 是 Protocol Labs 发起的一个全新的
 
 当前的互联网基于的是从域名到 IP 再到服务器的获取数据方式。简单的一个取数据过程就会遇到两个会发生单点失效的中心，一个是 DNS 服务，另外一个是具体的服务器，域名被污染，服务器被勒令关停，直接数据就获取不到了，互联网的自由何在？我想对于这些痛点做互联网开发的人都会有体会。
 
-![](https://img.haoqicat.com/2019042502.jpg)
+![](https://happypeter.github.io/images/2019042502.jpg)
 
 
 而 IPFS 给出的思路不是 where it is （去哪里找）而是 what it is （要找的是什么）。只要给定内容的 Hash https://zhuanlan.zhihu.com/p/45811215 ，就可以把数据拿到，Hash 是数据内容的指纹，按照 Hash 去查找数据，就是所谓的按照内容查找和按照 What it is 去查找。这种方式带来两个明显的好处：首先，如果我请求一个文件，但是文件的被恶意篡改过了，这样我拿到文件后，运算一下哈希，发现哈希跟文件名是不相同的，就可以判定文件是不可信的。其次，既然是按照哈希存储，那么相同内容的文件，文件名也必然相同，所以就可以合理的删除一些同名文件，保证了互联网存储资源的充分利用。
@@ -32,11 +32,11 @@ IPFS 和当前 Web 的存储数据的方式也非常不同。
 
 传统互联网的内容都是存放到单台服务器上。这样的弊端是非常明显：首先，所有用户都去同一台服务器上，会造成拥堵。其次，这种架构也会非常容易遭受 DDOS 攻击，也就是有人恶意的向这台服务器发起频繁请求造成拥堵。
 
-![](https://img.haoqicat.com/2019042503.jpg)
+![](https://happypeter.github.io/images/2019042503.jpg)
 
 而 IPFS 采用了去中心化的存放方式。数据是存放到每个使用 IPFS 的客户机上的，他人的客户机就是我的服务器。当我存放一个文件的时候，文件会被切分成很多个小数据块，每个小块叫做一个 IPFS Object ，每个 IPFS Object 可以存储256k 的数据。所有的小块组成一个 [Merkle Tree](./merkle) ，分别存储到不同的机器上，这就是为何 IFPS 有个外号叫 The Merkle Web 了。
 
-![](https://img.haoqicat.com/2019042504.jpg)
+![](https://happypeter.github.io/images/2019042504.jpg)
 
 另外，使用 IPFS 存储数据的时候，数据是进行了版本控制的。因为 IPFS 存储数据的形式跟 Git 非常类似的。Git 本质上也是一个按内容寻址的文件系统。IPFS 网络数据是 immutable 的，也就是不可篡改的，这个特点和 Git 以及区块链都是一致的。如果我更改了我自己原来的一个文件，那么这个更新文件就会以新版本的形式存在，原来的老版本保持不被修改。底层新老版本之间的关系跟 Git 存储方式很类似，也是通过 commit 来更新文件版本的，所以两个文件的相同部分的不会重复存储操作硬盘浪费。
 

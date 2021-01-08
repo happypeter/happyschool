@@ -2,7 +2,7 @@
 title: The Value Of Bitcoin
 date: '2019-05-16'
 spoiler: US dollar is backed by the US tax, company stock is backed by the assets of the company, many people think bitcoin is a scam, since the value seems to come from thin air. Does Bitcoin has any value at all? Different people has different view points. In my eyes, Bitcoin is a network, the value should be measured by the dispersion of the coins. At the same time, Bitcoin is not like a traditional IT network, it it not a network of information, it is a network of value and consensus.
-plink: 'https://img.haoqicat.com/2019051501.jpg'
+plink: 'https://happypeter.github.io/images/2019051501.jpg'
 video: 'https://youtu.be/ZdadUtM5-qU'
 ---
 
@@ -26,7 +26,7 @@ The second point is equally important. Bitcoin is not merely a IT network like o
 
 But is the value of Bitcoin overvalued? Like Wechat, Bitcoin is a network, but there is the big big difference between traditional network of information like Wechat and the new network of value like Bitcoin. Bitcoin for first time in history enables people to pass something on Internet to another person, and before that you can only share sth with others, which means you still hold a copy. Keeping a copy for ourselves won't harm if we are sharing some information, but is not acceptable if we want to pass value.
 
-![](https://img.haoqicat.com/2019051503.jpg)
+![](https://happypeter.github.io/images/2019051503.jpg)
 
 
 To quote XiaoLai Li, one of the Bitcoin early investors in China
@@ -41,7 +41,7 @@ Bitcoin means freedom to pay, money is your vote.
 
 Bitcoin is a network of value based on network of consensus. We are here at the third and last point of this episode and will cover why Bitcoin is also interesting form a social perspective.
 
-![](https://img.haoqicat.com/2019051504.jpg)
+![](https://happypeter.github.io/images/2019051504.jpg)
 
 Consensus does not only happens with Bitcoin. The fancy word Blockchain, simply means consensus achieved by cryptography. People used to base their trust on small number of so-called trust-worthy people, but now Blockchain people try to rebuild a new society with its root of trust based on consensus of everybody. Our society pays a lot for the lack of trust. Blockchain is here to build the trust with math. It's ridiculous to hear people saying Blockchain is a wonderful new invention, and Bitcoin is a scam, since Bitcoin is the thing that brings Blockchain to us.
 

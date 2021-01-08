@@ -2,13 +2,13 @@
 title: How IPFS Works Under The Hood
 date: '2019-04-25'
 spoiler: Next generation Web, Web3, should be more decentralized and censorship resistant, which requires a more decentralized way for data storage. That is why IPFS, InterPlanetary File System, and Filecoin got so much attention, let's figure out how IPFS works under the hood.
-plink: 'https://img.haoqicat.com/2019042507.jpg'
+plink: 'https://happypeter.github.io/images/2019042507.jpg'
 video: 'https://www.youtube.com/watch?v=jAfqv3KrHRc&feature=youtu.be'
 ---
 
 Next generation Web, Web3, should be more decentralized and censorship resistant, which requires a more decentralized way for data storage. That is why IPFS, InterPlanetary File System, and Filecoin got so much attention, and invested by well known venture capitals like Y Combinator, Naval Ravikant, Andreessen Horowitz, Union Square Ventures Sequoia and Winklevoss Capital. Now let's figure out how IPFS works under the hood.
 
-![](https://img.haoqicat.com/2019042501.jpg)
+![](https://happypeter.github.io/images/2019042501.jpg)
 
 
 ## From Where To What
@@ -17,7 +17,7 @@ IPFS created by Protocol Labs as a brand new data storage protocol, is a lot dif
 
 The current solution is from domain name to IP address and then server. There are two Single Point Of Failure here, one is the DNS service, the other is the server itself. Once domain is blocked, server shut down because of censorship, the data is not longer available. Such Web can not be free, the practitioners like you and me know this too well.
 
-![](https://img.haoqicat.com/2019042502.jpg)
+![](https://happypeter.github.io/images/2019042502.jpg)
 
 
 However, the solution IPFS gives is to retrieve by what it is rather than where it is. We get the file by its hash, because the IPFS always has the file named by its hash. A file hash maps to its content, that's why we call the IPFS way is getting by what it is. This approach brings two advantages. NO.1, Once I get the file I can be sure it is not tempered, since the hash can be calculated and checked if it matches the filename. NO.2, Same content produce the same file name, we can safely delete files with same name and keep only one copy of the file to save space on Web.
@@ -30,12 +30,12 @@ IPFS also differs in the way how data is stored.
 
 Storing content on a single server has obvious problems. Firstly, all users need to go for the same server and easily make the service slow. Secondly, this is vulnerable to DDOS attack, that is someone intentionally sends huge number of requests to make the service unavailable to others.
 
-![](https://img.haoqicat.com/2019042503.jpg)
+![](https://happypeter.github.io/images/2019042503.jpg)
 
 
 However, IPFS takes a distributed approach. Data is saved on all the clients using IPFS, forming a Your Client Is My Server architecture. When a file is saved, it is divided into smaller data blocks named IPFS Object, which can save up to 256k data in it. All the objects are organized into a Merkle Tree, and saved on different machines, therefore, IPFS is sometimes called The Merkle Web.
 
-![](https://img.haoqicat.com/2019042504.jpg)
+![](https://happypeter.github.io/images/2019042504.jpg)
 
 Furthermore, data is version controlled in IPFS. The way how data is saved is quite similar to Git. After all, Git by nature is a file system that locates data by content. IPFS data is immutable, this is exactly like Git as well. If a file is updated, then it is saved as a latest version, the older versions of this file kept untouched. Under the hood, all versions are saved like Git through commits, so that the same part of the file won't be copied and cause storage waste.
 

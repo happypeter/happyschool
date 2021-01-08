@@ -3,7 +3,7 @@ title: 为何使用 Rust 语言？
 date: '2019-04-11'
 video: 'https://www.bilibili.com/video/av48984844/'
 spoiler: Rust 是一个相对比较新的语言，2015年才正式发布，目的在于替代 C/C++ 以及其他更高层级的语言，我们首先要问的是，为何又要发明一门新的语言呢？这里来给出答案。
-plink: 'https://img.haoqicat.com/2019041201.jpg'
+plink: 'https://happypeter.github.io/images/2019041201.jpg'
 ---
 
 Rust 是一种2015年发布的新的编程语言，可以作为 C/C++ 或者一些更上层语言的替代品。你可能首先要问的一个问题是
@@ -20,11 +20,11 @@ Rust 是一种编译型语言，类似 C ，可以对硬件进行直接的操作
 
 Rust 遵从“零成本抽象”。Rust 提供了一些抽象，不然就不能提供出那些更高层级的语言才有的好用的语言特性。但是 Rust 的设计是非常巧妙的，会保证这些抽象是零成本的，也就是所有的抽象都会在编译过程中被处理，真正执行的时候是不依赖 Garbage Collector 或者其他的运行时的，也就避免了消耗资源。
 
-![](https://img.haoqicat.com/2019041203.jpg)
+![](https://happypeter.github.io/images/2019041203.jpg)
 
 Rust 跟其他的语言也能非常无缝的融合。Rust 可以通过 C ABI 的形式来跟其他语言实现零成本的对接。Rust 中可以使用 C 库，C 代码中也能直接使用 Rust 库。
 
-![](https://img.haoqicat.com/2019041204.jpg)
+![](https://happypeter.github.io/images/2019041204.jpg)
 
 
 下面来观察一个[例子](http://intorust.com/tutorial/why-rust/)，体会一下 Rust 的做事风格。Ruby 语言有一个方法叫做 blank ，用来做字符串是否为空的检查。Ruby 的实现是这样的。
@@ -160,7 +160,7 @@ exten "C" fn fast_blank(buf: Buf) -> bool {
 
 C/C++ 提供了极高的灵活性，但是同时也让开发者面对各种的风险。C 语言可以实现非常高的性能，但是由于没有抽象层的保护，开发者很容易就会写出 Bug 。C++ 也类似，对开发者容忍度很低，一个很小的疏忽，就可能导致程序崩溃，其实崩溃还是幸运的，有时候会出现很低难以复现的诡异情况。Peter 自己第一份工作就是全职 C++ 开发者，感觉既要实现业务逻辑，还要同时讨好硬件，双份劳动，一份产出。后来切换到 Ruby 和 Python 这些高层级语言后，就只需要关注业务逻辑即可。
 
-![](https://img.haoqicat.com/2019041205.jpg)
+![](https://happypeter.github.io/images/2019041205.jpg)
 
 但是 Rust 真的很不一样，Rust 提供了很强的安全保证。使用 Rust 写的代码，运行的时候不会出现各种硬件安全问题，例如段错误，运行时崩溃，野指针，越界资源调用，或者 data race 。那么这是如何做到的呢？Rust 通过一定的语言层面的规定和强大的编译器支持来避免上面的情况。如果你是新手程序员，犯了这些错误，编译的时候，编译器会告诉你存在的问题，而不会在程序运行的时候出现各种诡异的没有报错的状况。
 
@@ -174,12 +174,12 @@ Rust 有句口号是：Hack without fear 。只要程序编译是通过的，我
 
 而到了 Rust 社区，经常会被提到的一个词就是“人体工学”，这是跟 Ruby 追求的目标一致的，也就是让开发过程变得舒服。
 
-![](https://img.haoqicat.com/2019041206.jpg)
+![](https://happypeter.github.io/images/2019041206.jpg)
 
 
 Rust 是支持多种开发范式的，例如，generic, imperative, structured 等。同时借鉴 Haskell 等函数式语言，Rust 也对函数式编程有很好的支持。Rust 里面的变量默认就是 immutable 的，也就是拥有“不变性”的。这样的功能可不是 C/C++ 可以提供的，支持多范式，Peter 不确定是不是属于人体工学，但是不支持函数式编程的语言，用起来怎么可能 Happy 呢。
 
-![](https://img.haoqicat.com/2019041207.jpg)
+![](https://happypeter.github.io/images/2019041207.jpg)
 
 Rust 的工具生态也非常的好。Rust 有自己的包管理系统，跟 npm 类似，可以很方便的下载到需要的包，并进行依赖管理。编译系统也很完善，不需要手动去写 Makefile 了。
 
